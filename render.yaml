@@ -1,0 +1,17 @@
+services:
+- type: web
+  name: zad-volunteer-backend
+  env: node
+  plan: starter
+  buildCommand: npm install
+  startCommand: node server.js
+  envVars:
+  - key: NODE_ENV
+    value: production
+  - key: JWT_SECRET
+    value: zad_volunteer_system_render_2024_secure
+  - key: CORS_ORIGIN
+    value: '*'
+  - key: DATABASE_URL
+    sync: false
+    value: postgresql://neondb_owner:npg_pyWa0veK5GVd@ep-sweet-queen-afterzw1-pooler.c-2.us-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require
